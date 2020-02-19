@@ -10,5 +10,11 @@
     "name": "release/v.0.4.x",
     "sha": "8af71b012c1071a5ddb003613dd4e615f51e9986",
     "tag": null
+  },
+  "release": {
+    "path": "versions/release",
+    "name": "release",
+    "sha": "fa46c45806edd19cf8d9a482a0c493c0b14b657e",
+    "tag": null
   }
 }
