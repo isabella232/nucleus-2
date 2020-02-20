@@ -5,6 +5,12 @@
     "sha": "1f3bc9b84f374ba194cfa66d386c978fd33d2213",
     "tag": null
   },
+  "-latest": {
+    "path": "",
+    "name": "Latest",
+    "sha": "8af71b012c1071a5ddb003613dd4e615f51e9986",
+    "tag": "v0.5.1"
+  },
   "release/v.0.4.x": {
     "path": "versions/release/v.0.4.x",
     "name": "release/v.0.4.x",
