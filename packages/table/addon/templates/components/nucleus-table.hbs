@@ -2,7 +2,7 @@
   {{#nucleus-pagination records=rows pageSize=pageSize pageReload=pageReload as |pagination|}}
    {{yield (hash
       paginator = pagination.paginator
-      table = (component "nucleus-table/table"
+      table = (component "nucleus-table/table-component"
         columns=columns
         pageItems=pagination.pageItems
       )

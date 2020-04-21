@@ -1,12 +1,21 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name="nucleus-table2.hbs"}}
-    {{#nucleus-table
-      columns=columns
-      rows=rows
-      pageSize=2
-      as |table|}}
-      {{table.table canFilter=false}}
-    {{/nucleus-table}}
+    {{#ember-table as |t|}}
+      {{#t.head columns=columns enableResize=false enableReorder=true as |h|}}
+        {{#h.row as |r|}}
+          {{#r.cell as |column|}}
+            {{column.name}}
+          {{/r.cell}}
+        {{/h.row}}
+      {{/t.head}}
+      {{#t.body rows=rows as |b|}}
+        {{#b.row as |r|}}
+          {{#r.cell as |cellValue|}}
+            {{cellValue}}
+          {{/r.cell}}
+        {{/b.row}}
+      {{/t.body}}
+    {{/ember-table}}
   {{/demo.example}}
   {{demo.snippet "nucleus-table2.hbs"}}
   {{demo.snippet "table-component2.js" label="component.js"}}

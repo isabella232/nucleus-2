@@ -6,21 +6,24 @@ import defaultProp from '@freshworks/core/utils/default-decorator';
 import { action, computed, set } from '@ember/object';
 import { A } from '@ember/array';
 import Component from '@ember/component';
-import layout from "../../templates/components/nucleus-table/table";
+import layout from "../../templates/components/nucleus-table/table-component";
+import Table from 'ember-light-table';
 
 /**
   __Usage:__
 
-  [Refer component page](/docs/components/nucleus-table/filter)
+  [Refer component page](/docs/components/nucleus-table/table-component)
 
-  @class Nucleus Table
+  @class Table Component
   @namespace Components
   @extends Ember.Component
   @public
 */
 @templateLayout(layout)
 @tagName('')
-class Table extends Component {
+class TableComponent extends Component {
+
+  model=null;
 
   @defaultProp
   canFilter=true;
@@ -78,6 +81,11 @@ class Table extends Component {
   })
   selected;
 
+  @computed('selectedColumns', function() {
+    return Table.create(this.selectedColumns, this.rows);
+  })
+  table;
+
   @action
   onFilterColumns(filteredColumns) {
     if(filteredColumns && filteredColumns.length > 0) {
@@ -91,4 +99,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default TableComponent;
